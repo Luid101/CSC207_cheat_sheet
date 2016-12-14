@@ -6,17 +6,18 @@
 \setlength\parindent{0pt}
 \begin{document}
 \textbf{Back references: refers to the exact part of string that is matched to the group number not matched to the pattern \\}
-\includegraphics[width=12cm,height =3cm]{regexTable.jpg}\\
+\includegraphics[width=4cm,height =3cm]{regexTable.jpg}
+\includegraphics[width=6cm,height =3cm]{testCases.png}\\
 \textbf{UML Design Patterns}\\
-\includegraphics[width=6cm,height =3cm]{Builder.png}
+\includegraphics[width=6cm,height =3cm]{builder.png}
 \includegraphics[width=6cm,height =3cm]{command.png}
-\includegraphics[width=6cm,height =3cm]{Composite.png}\\
-\includegraphics[width=6cm,height =3cm]{Factory.png}
+\includegraphics[width=6cm,height =3cm]{composite.png}\\
+\includegraphics[width=6cm,height =3cm]{factory.png}
 \includegraphics[width=6cm,height =3cm]{it.png}
-\includegraphics[width=6cm,height =3cm]{MVC.png}\\
+\includegraphics[width=6cm,height =3cm]{mvc.png}\\
 \includegraphics[width=6cm,height =3cm]{obs.png}
-\includegraphics[width=6cm,height =3cm]{Singleton.png}
-\includegraphics[width=6cm,height =3cm]{Strategy.png}\\
+\includegraphics[width=6cm,height =3cm]{singleton.png}
+\includegraphics[width=6cm,height =3cm]{strategy.png}\\
 \textbf{Git Basics}
 git pull [location name]\\
 git add [file name] or . (adds all)\\
@@ -171,7 +172,27 @@ public class Client {
         ctx.setTravelStrategy(new BusStrategy());
         ctx.takeTrip(new Person("Sadia", "Canada"), "Australia");}}
 \end{verbatim}
-
+\textbf{Factory}
+\begin{verbatim}
+public class Main {
+    public static void main(String[] args) {
+        Fruit fruit;
+        FruitFactory fruitFactory = new FruitFactory();
+        fruit = fruitFactory.makeFruit("Apple");
+        fruit = fruitFactory.makeFruit("Orange");}}
+public class FruitFactory {
+    public Fruit makeFruit(String type) {
+        Fruit fruit = null;
+        if (type == "Apple") {fruit = new Apple();}
+        else if (type == "Orange") {fruit = new Orange();}
+        return fruit;}}
+public abstract class Fruit {
+    final String type;
+    public Fruit(String type){this.type = type;}
+    public String getType() {return type;}}
+public class Apple extends Fruit {
+    public Apple() {super("Apple");}}
+\end{verbatim}
 \includegraphics[width=6cm,height =4.5cm]{scrum.png}\\
 Product Owner: Responsible for product backlog, represents users, expresses backlog items and orders them by value \\
 Development Team: Responsible for delivering potentially shippable increment of working software \\
@@ -216,8 +237,7 @@ Final IEEE:  {$ \underbrace{1}_\texttrm{ }  \underbrace{10000001}_\texttrm{8 bit
 Note: Interfaces can extend other interfaces, classes can implement multiple interfaces, classes can only extend a single class
 Note: Abstract classes cannot be instantiated
 Note: If A extends B, then the code {A a = new B();} is valid but the code {B b = new A();} is invalid because of a type mismatch
-\textbf{JUnit testing}\\
-We want to test class Student, so we create a 
+
 
 
 
